@@ -1,10 +1,10 @@
 {
-    "name": "EnvyTek/sitemap",
+    "name": "envytek/sitemap",
     "description": "Sitemap and sitemap index builder",
     "keywords": [
         "sitemap"
     ],
-    "homepage": "https://github.com/EnvyTek/sitemap",
+    "homepage": "https://github.com/envytek/sitemap",
     "license": "BSD-3-Clause",
     "authors": [
         {
