@@ -125,7 +125,7 @@ class Sitemap
 
         if ($this->useGzip) {
             if (\function_exists('deflate_init') && \function_exists('deflate_add')) {
-                $this->writerBackend = new DeflateWriter($filePath);
+                $this->writerBackend = new DeflateWriter($filePath. '.gz');
             } else {
                 $this->writerBackend = new TempFileGZIPWriter($filePath. '.gz');
             }
