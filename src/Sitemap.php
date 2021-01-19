@@ -127,7 +127,7 @@ class Sitemap
             if (\function_exists('deflate_init') && \function_exists('deflate_add')) {
                 $this->writerBackend = new DeflateWriter($filePath);
             } else {
-                $this->writerBackend = new TempFileGZIPWriter($filePath);
+                $this->writerBackend = new TempFileGZIPWriter($filePath. '.gz');
             }
         } else {
             $this->writerBackend = new PlainFileWriter($filePath);

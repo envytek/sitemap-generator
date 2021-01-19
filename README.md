@@ -3,7 +3,7 @@ Sitemap
 
 Multilingual sitemap builder.
 
-<img src="https://travis-ci.org/EnvyTek/sitemap.svg" />
+<img src="https://travis-ci.org/Envytek/sitemap.svg" />
 
 Features
 --------
@@ -20,7 +20,8 @@ Installation
 Installation via Composer is very simple:
 
 ```
-composer require envytek/sitemap
+composer require Envytek/
+composer require Envytek/sitemap:dev-master
 ```
 
 After that, make sure your application autoloads Composer classes by including
@@ -30,8 +31,8 @@ How to use it
 -------------
 
 ```php
-use EnvyTek\Sitemap\Sitemap;
-use EnvyTek\Sitemap\Index;
+use Envytek\Sitemap\Sitemap;
+use Envytek\Sitemap\Index;
 
 // create sitemap
 $sitemap = new Sitemap(__DIR__ . '/sitemap.xml');
@@ -95,7 +96,7 @@ Multi-language sitemap
 ----------------------
 
 ```php
-use EnvyTek\Sitemap\Sitemap;
+use Envytek\Sitemap\Sitemap;
 
 // create sitemap declaring you need alternate links support
 $sitemap = new Sitemap(__DIR__ . '/sitemap_multi_language.xml', [AlternateLink::class]);

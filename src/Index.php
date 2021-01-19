@@ -86,7 +86,7 @@ class Index
             $this->writer->endDocument();
             $filePath = $this->getFilePath();
             if ($this->useGzip) {
-                $filePath = 'compress.zlib://' . $filePath;
+                $filePath = 'compress.zlib://' . $filePath. '.gz';
             }
             file_put_contents($filePath, $this->writer->flush());
         }
