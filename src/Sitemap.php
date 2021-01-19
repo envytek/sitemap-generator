@@ -125,9 +125,9 @@ class Sitemap
 
         if ($this->useGzip) {
             if (\function_exists('deflate_init') && \function_exists('deflate_add')) {
-                $this->writerBackend = new DeflateWriter($filePath. '.gz');
+                $this->writerBackend = new DeflateWriter($filePath);
             } else {
-                $this->writerBackend = new TempFileGZIPWriter($filePath. '.gz');
+                $this->writerBackend = new TempFileGZIPWriter($filePath);
             }
         } else {
             $this->writerBackend = new PlainFileWriter($filePath);
@@ -272,7 +272,7 @@ class Sitemap
     protected function getCurrentFilePath(): string
     {
         if ($this->fileCount < 2) {
-            return $this->filePath;
+            return $this->filePath . '.gz';
         }
 
         $parts = pathinfo($this->filePath);
@@ -280,10 +280,10 @@ class Sitemap
             $filenameParts = pathinfo($parts['filename']);
             if (!empty($filenameParts['extension'])) {
                 $parts['filename'] = $filenameParts['filename'];
-                $parts['extension'] = $filenameParts['extension'] . '.gz';
+                $parts['extension'] = $filenameParts['extension'];
             }
         }
-        return $parts['dirname'] . DIRECTORY_SEPARATOR . $parts['filename'] . '-' . $this->fileCount . '.' . $parts['extension'];
+        return $parts['dirname'] . DIRECTORY_SEPARATOR . $parts['filename'] . '-' . $this->fileCount . '.' . $parts['extension'] . '.gz';
     }
 
     /**
